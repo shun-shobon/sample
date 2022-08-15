@@ -1,6 +1,8 @@
 // 敵の座標と半径
 int ex = 300;
 int ey = 300;
+int evx = 5;
+int evy = 2;
 int er = 40;
 
 void setup() {
@@ -22,6 +24,12 @@ void draw() {
   // 敵 
   fill(200, 20, 200);
   ellipse(ex, ey, er * 2, er * 2);
+  
+  // 敵を動かす
+  ex += evx;
+  ey += evy;
+  if (ex < 0 || 600 < ex) evx *= -1;
+  if (ey < 0 || 600 < ey) evy *= -1;
 
   // 自機と敵の距離
   int dx = px - ex;
