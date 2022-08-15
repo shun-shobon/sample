@@ -28,6 +28,8 @@ void draw() {
   // 敵を動かす
   ex += evx;
   ey += evy;
+  if (ex < 0 || 600 < ex) evx *= -1;
+  if (ey < 0 || 600 < ey) evy *= -1;
 
   // 自機と敵の距離
   int dx = px - ex;
